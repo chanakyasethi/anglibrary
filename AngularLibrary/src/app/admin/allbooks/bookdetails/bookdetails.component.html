@@ -1,0 +1,35 @@
+<div *ngIf="book">
+<div class="ui segment" style="margin:auto;width:80%;background-color:lightgreen"  >
+    <h1>Book Details</h1>
+    <table class="ui definition table">
+        <tbody>
+          <tr>
+            <td>Name</td>
+            <td>{{book.name}}</td>
+          </tr>
+          <tr>
+            <td>Publisher</td>
+            <td>{{book.publisher}}</td>
+          </tr>
+          <tr>
+            <td>Author</td>
+            <td>{{book.author}}</td>
+          </tr>
+          <tr>
+            <td>Total Units</td>
+            <td>{{book.units}}</td>
+          </tr>
+          <tr>
+            <td>Units Issued</td>
+            <td>{{book.issuedunits}}</td>
+          </tr>
+          <tr>
+            <td>Units Available</td>
+            <td>{{book.availableunits}}</td>
+          </tr>
+      </tbody></table>
+      <a class="btn btn-info" style="cursor:pointer" (click)="onEditBook()">Edit Book</a>
+      <a class="btn btn-danger" style="cursor:pointer" (click)="onDeleteBook()">Delete Book</a>
+</div>
+<a routerLink="../" class="ui green button">Back</a>
+</div>

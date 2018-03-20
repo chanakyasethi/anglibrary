@@ -1,0 +1,25 @@
+<h2>Add a new book</h2>
+<form #bookForm="ngForm" (ngSubmit)="onSubmit(bookForm)">
+    <div class="form-group">
+        <label class="form-inline">Name</label>
+        <input class="form-control" [ngModel]='bookName' type="text" name="bookName">
+    </div>
+    <div class="form-group">
+        <label class="form-inline">Publishing Company/Publisher</label>
+        <input class="form-control" [ngModel]='publisher' type="text" name="publisher">
+    </div>
+    <div class="form-group">
+        <label class="form-inline">Author's Name</label>
+        <input class="form-control" [ngModel]='authorName' type="text" name="authorName">
+    </div>
+    <div class="form-group">
+        <label class="form-inline">Number of Books</label>
+        <input class="form-control" [ngModel]='totalunits'  type="text" name="totalunits">
+    </div>
+    <div class="form-group">
+        <label class="form-inline">Description</label>
+        <input class="form-control" [ngModel]='description' type="text" name="description">
+    </div>
+    <button type="submit" [disabled]="!bookForm.valid" class="btn btn-success">Save</button>
+    <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
+</form>

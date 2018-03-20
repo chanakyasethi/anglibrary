@@ -1,0 +1,31 @@
+    <div>
+      <h1>Are you searching for books ?</h1>
+                <table id="customers">
+                        <tr>
+                          <th>Name of the Book</th>
+                          <th></th>
+                        </tr>
+                        <tr *ngFor="let book of books | search:name ">
+                          <td> {{book.name}}</td>
+                          <td>
+                            <form style="display:inline" *ngIf="book.availableunits > 0">                
+                              <button class="btn btn-primary" style="float:right">Issue</button>
+                          </form>
+                          <form style="display:inline" *ngIf="book.availableunits === 0" >                
+                              <button disabled="disabled" class="btn btn-primary" style="float:right">Issue</button>
+                          </form>   
+                        </td>
+                        </tr>
+                        </table>
+    </div>
+    <!-- <div *ngIf="name == ''">
+      <h3 style="text-align:center">Search Something Available!!</h3>
+    </div> -->
+    <!-- <ul>
+      <li >
+        <div *ngFor = "let book of books ">
+        {{book.name}}
+          
+        </div>
+      </li>
+    </ul> -->

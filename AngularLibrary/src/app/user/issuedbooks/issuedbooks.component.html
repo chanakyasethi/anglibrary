@@ -1,0 +1,20 @@
+<div *ngIf="books.length > 0">
+  <h1>List of all issued books</h1>
+  <table id="customers">
+      <tr>
+        <th>Name of the Book</th>
+        <th>Issued On</th>
+        <th></th>
+      </tr>
+      <tr *ngFor="let book of books">
+        <td> {{book.name}}</td>
+        <td> {{book.issuedon | date:'fullDate' }}</td>
+        <td>              
+          <button class="btn btn-danger" (click)="onReturn(book)" style="float:right">Return</button>
+      </td>
+      </tr>
+      </table >
+</div>
+            <div style="margin-top:40px; margin-left:40px" *ngIf="books.length == 0">
+              <h2 style="text-align:center">No books Issued</h2>
+            </div>

@@ -1,0 +1,20 @@
+<ng-template #elsee>
+  <h2  style="text-align:center;margin-top:80px">Bookless !!!!!</h2>      
+</ng-template>
+<div *ngIf="books;else elsee">
+    <h3  >List of All books</h3>
+      <table id="customers" >
+          <tr>
+            <th>Name of the Book</th>
+            <th></th>
+          </tr>
+          <tr *ngFor="let book of books; let id = index">
+            <td> {{book.name }}</td>
+            <td>                
+              <a class="btn btn-primary" [routerLink]="[book._id]" style="margin-left:0px">Info</a>
+          </td>
+          </tr>
+      </table>
+    </div>
+   
+      
